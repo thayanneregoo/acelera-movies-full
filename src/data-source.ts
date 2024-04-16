@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
     username: "postgres",
     password: "1234",
     database: "acelera_movies",
-    synchronize: true,
+    synchronize: false,
     logging: true,
     entities: [User, Movie],
     migrations: [],
