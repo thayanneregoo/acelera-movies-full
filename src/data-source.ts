@@ -12,7 +12,7 @@ export const AppDataSource = new DataSource({
     password: "1234",
     database: "acelera_movies",
     synchronize: false,
-    logging: true,
+    logging: false,
     entities: [User, Movie],
     migrations: [],
     subscribers: [],

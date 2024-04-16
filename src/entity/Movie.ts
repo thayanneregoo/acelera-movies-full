@@ -6,41 +6,45 @@ export class Movie {
   id: number
 
   @Column({ name: "title", type: "varchar" })
-  title?: string
+  title: string
 
   @Column({ name: "gender", type: "varchar" })
-  gender?: string
+  gender: string
 
   @Column({ name: "classification", type: "varchar" })
-  classification?: string
+  classification: string
 
   @Column({ name: "subtitle", type: "varchar" })
-  subtitle?: string
+  subtitle: string
 
   @Column({ name: "image", type: "varchar" })
-  image?: string
+  image: string
 
   @Column({ name: "releasedate", type: "varchar" })
-  releasedate?: string
+  releasedate: string
 
   @Column({ name: "director", type: "varchar" })
-  director?: string
+  director: string
 
   @Column({ name: "writer", type: "varchar" })
-  writer?: string
+  writer: string
 
   @Column({ name: "studio", type: "varchar" })
-  studio?: string
+  studio: string
 
   @Column({ name: "actors", type: "varchar" })
-  actors?: string
+  actors: string
 
   @Column({ name: "resume", type: "text" })
-  resume?: string
+  resume: string
 
   @Column({ name: "awards", type: "varchar" })
-  awards?: string
+  awards: string
 
   @Column({ name: "note", type: "int" })
-  note?: number
+  note: number
+}
+
+function IsNotEmpty(): (target: Movie, propertyKey: "title") => void {
+  throw new Error("Function not implemented.")
 }
