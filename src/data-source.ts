@@ -1,0 +1,26 @@
+import "reflect-metadata"
+import { DataSource } from "typeorm"
+import { User } from "./entity/User"
+import { Movie } from "./entity/Movie"
+
+
+export const AppDataSource = new DataSource({
+    type: "postgres",
+    host: "localhost",
+    port: 5432,
+    username: "postgres",
+    password: "1234",
+    database: "acelera_movies",
+    synchronize: true,
+    logging: true,
+    entities: [User, Movie],
+    migrations: [],
+    subscribers: [],
+})
+export const getDBConnection = async (): Promise<DataSource> => {
+    if (!AppDataSource.isInitialized) {
+      await AppDataSource.initialize();
+      console.log('inicializando data source')
+    }
+    return AppDataSource;
+  };
